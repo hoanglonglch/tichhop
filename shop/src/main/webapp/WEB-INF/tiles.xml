@@ -1,0 +1,31 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="definition" template="/resources/view/template/template.jsp">
+		<put-attribute name="header" value="/resources/view/template/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/resources/view/template/footer.jsp" />
+		
+		<put-attribute name="slider" value="/resources/view/template/slider.jsp" />
+		
+		<put-attribute name="leftSide" value="/resources/view/template/leftSide.jsp" />
+		<put-attribute name="topbar" value="/resources/view/template/topbar.jsp" />
+		<put-attribute name="mainmenu" value="/resources/view/template/mainmenu.jsp" />
+	</definition>
+	
+	<definition name="welcome" extends="definition">
+		<put-attribute name="body" value="/resources/view/user/welcome.jsp" />
+	</definition>	
+	<definition name="login" extends="definition">
+		<put-attribute name="body" value="/resources/view/user/login.jsp" />
+	</definition>	
+	<definition name="listRole" extends="definition">
+		<put-attribute name="body" value="/resources/view/user/listRole.jsp" />
+	</definition>
+	<definition name="homePage" extends="definition">
+		<put-attribute name="body" value="/resources/view/user/home.jsp" />
+	</definition>	
+</tiles-definitions>
