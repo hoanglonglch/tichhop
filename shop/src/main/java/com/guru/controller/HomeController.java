@@ -36,13 +36,7 @@ public class HomeController {
 
 	}
 
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
-	public String adminPae(ModelMap model) {
-		model.addAttribute("message", "this is admin page");
-		model.addAttribute("author", "adminPage");
-		return "welcome";
-
-	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model,String error, String logout) {
 //		if Having error parameter, will add error to view

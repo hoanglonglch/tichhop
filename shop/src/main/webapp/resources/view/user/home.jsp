@@ -3,7 +3,7 @@
                         <div class="outertight">
                         	<ul class="block">
                                 <li>
-                                    <a href="#"><img src="./resources/img/trash/5.png" alt="MyPassion" class="alignleft" /></a>
+                                    <a href="#"><img src="${contextPath}/resources/img/trash/5.png" alt="MyPassion" class="alignleft" /></a>
                                     <p>
                                         <span>26 May, 2013.</span>
                                         <a href="#">Blandit Rutrum, Erat et Sagittis.</a>
@@ -11,7 +11,7 @@
                                     <span class="rating"><span style="width:80%;"></span></span>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="./resources/img/trash/6.png" alt="MyPassion" class="alignleft" /></a>
+                                    <a href="#"><img src=".${contextPath}/img/trash/6.png" alt="MyPassion" class="alignleft" /></a>
                                     <p>
                                         <span>26 May, 2013.</span>
                                         <a href="#">Blandit Rutrum, Erat et Sagittis.</a>
