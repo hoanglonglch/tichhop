@@ -1,3 +1,4 @@
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <div class="column-one-third">
                     	<h5 class="line"><span>Popular News.</span></h5>
                         <div class="outertight">
