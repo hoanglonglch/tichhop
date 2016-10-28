@@ -45,12 +45,13 @@ public class AdminController {
 	@RequestMapping(value = "/newParent", method = RequestMethod.POST)
 	public String managerCate(ModelMap model,@ModelAttribute("categoryForm")Category category) {
 		ParentCate parentCate= new ParentCate(category.getParentCate().getParentName());
-		repositoryParent.save(parentCate);
+		if(repositoryParent.findByParentName(category.getParentCate().getParentName()) == null){
+			repositoryParent.save(parentCate);
+		}
 		int idParent= repositoryParent.findByParentName(parentCate.getParentName()).getId();
 		category.setParentCate(repositoryParent.findById(idParent));
 		repositoryCate.save(category);
-		
-		return "category";
+		return "redirect:/admin/newParent";
 	}
 	
 	

@@ -6,23 +6,39 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.guru.model.ParentCate;
 import com.guru.model.Role;
+import com.guru.repository.ParentCateRepository;
 import com.guru.repository.RoleRepository;
 
 @Controller
+@RequestMapping(value="/")
+@Transactional
 public class HomeController {
+	
+	@Autowired
+	ParentCateRepository repositoryParent;
+	
+	@ModelAttribute("parentCates")
+	public List<ParentCate> getCategories(){
+		return repositoryParent.findAll(); 
+	}
 	
 	@Autowired
 	RoleRepository repositoryRole;
     private static Logger logger = Logger.getLogger(HomeController.class);
     
     @RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home1() {
+	public String home1(Model model) {
+    	/*List<ParentCate> parentCates=repositoryParent.findAll();
+    	model.addAttribute("parentCates",parentCates);*/
 		return "homePage";
 
 	}

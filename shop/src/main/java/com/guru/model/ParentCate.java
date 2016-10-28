@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,7 +19,7 @@ public class ParentCate {
 	private int id;
 	private String parentName;
 
-	@OneToMany(mappedBy = "parentCate", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "parentCate", cascade = CascadeType.ALL)
 	List<Category> categories;
 	
 	public ParentCate() {
