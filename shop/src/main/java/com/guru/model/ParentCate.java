@@ -20,6 +20,16 @@ public class ParentCate {
 
 	@OneToMany(mappedBy = "parentCate", cascade = CascadeType.ALL)
 	List<Category> categories;
+	
+	public ParentCate() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ParentCate(String parentName) {
+		super();
+		this.parentName = parentName;
+	}
+
 
 	public int getId() {
 		return id;

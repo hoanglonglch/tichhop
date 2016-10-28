@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.guru.model.Category;
+import com.guru.model.ParentCate;
 import com.guru.repository.CategoryRepository;
 import com.guru.repository.ParentCateRepository;
 
@@ -43,6 +44,10 @@ public class AdminController {
 	
 	@RequestMapping(value = "/newParent", method = RequestMethod.POST)
 	public String managerCate(ModelMap model,@ModelAttribute("categoryForm")Category category) {
+		ParentCate parentCate= new ParentCate(category.getParentCate().getParentName());
+		repositoryParent.save(parentCate);
+		int idParent= repositoryParent.findByParentName(parentCate.getParentName()).getId();
+		category.setParentCate(repositoryParent.findById(idParent));
 		repositoryCate.save(category);
 		
 		return "category";
