@@ -1,9 +1,11 @@
 package com.guru.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,8 +25,8 @@ public class Category {
 	@JoinColumn(name = "parentcate_id")
 	ParentCate parentCate;
 	
-	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-	List<New> news;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
+	Set<New> news;
 
 	public int getId() {
 		return id;
@@ -50,12 +52,13 @@ public class Category {
 		this.parentCate = parentCate;
 	}
 
-	public List<New> getNews() {
+	public Set<New> getNews() {
 		return news;
 	}
 
-	public void setNews(List<New> news) {
+	public void setNews(Set<New> news) {
 		this.news = news;
 	}
+
 	
 }
