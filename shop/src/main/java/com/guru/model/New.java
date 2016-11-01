@@ -1,14 +1,16 @@
 package com.guru.model;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -20,9 +22,17 @@ public class New {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String title;
-	private String image;
+	
 	@Type(type="text")
-	private String content;
+	private String content1;
+	private String image1;
+	private String imageTitle1;
+	
+	@Type(type="text")
+	private String content2;
+	private String image2;
+	private String imageTitle2;
+	
 	private Date date;
 
 	@ManyToOne
@@ -32,6 +42,9 @@ public class New {
 	@ManyToOne
 	@JoinColumn(name = "categories_id")
 	private Category category;
+	
+	/*@OneToMany(mappedBy = "newObj", cascade = CascadeType.ALL)
+	List<Image> images;*/
 
 	public int getId() {
 		return id;
@@ -47,22 +60,6 @@ public class New {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
 	}
 
 	public Date getDate() {
@@ -88,6 +85,55 @@ public class New {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+	public String getContent1() {
+		return content1;
+	}
+
+	public void setContent1(String content1) {
+		this.content1 = content1;
+	}
+
+	public String getImage1() {
+		return image1;
+	}
+
+	public void setImage1(String image1) {
+		this.image1 = image1;
+	}
+
+	public String getImageTitle1() {
+		return imageTitle1;
+	}
+
+	public void setImageTitle1(String imageTitle1) {
+		this.imageTitle1 = imageTitle1;
+	}
+
+	public String getContent2() {
+		return content2;
+	}
+
+	public void setContent2(String content2) {
+		this.content2 = content2;
+	}
+
+	public String getImage2() {
+		return image2;
+	}
+
+	public void setImage2(String image2) {
+		this.image2 = image2;
+	}
+
+	public String getImageTitle2() {
+		return imageTitle2;
+	}
+
+	public void setImageTitle2(String imageTitle2) {
+		this.imageTitle2 = imageTitle2;
+	}
+	
 	
 	
 }

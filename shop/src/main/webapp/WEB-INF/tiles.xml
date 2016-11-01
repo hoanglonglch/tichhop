@@ -28,6 +28,9 @@
 	<definition name="homePage" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/home.jsp" />
 	</definition>	
+	<definition name="managerHome" extends="definition">
+		<put-attribute name="body" value="/resources/view/user/managerHome.jsp" />
+	</definition>	
 	
 	<!-- admin page -->
 	<definition name="admin" template="/resources/view/template/templateAdmin.jsp">
@@ -35,5 +38,8 @@
 	</definition>
 	<definition name="category" extends="admin">
 		<put-attribute name="body" value="/resources/view/user/category.jsp" />
+	</definition>	
+	<definition name="createNew" extends="admin">
+		<put-attribute name="body" value="/resources/view/user/createNew.jsp" />
 	</definition>	
 </tiles-definitions>

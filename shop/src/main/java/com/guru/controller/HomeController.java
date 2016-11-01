@@ -35,13 +35,19 @@ public class HomeController {
 	RoleRepository repositoryRole;
     private static Logger logger = Logger.getLogger(HomeController.class);
     
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/home1", method = RequestMethod.GET)
 	public String home1(Model model) {
-    	/*List<ParentCate> parentCates=repositoryParent.findAll();
-    	model.addAttribute("parentCates",parentCates);*/
+    	
 		return "homePage";
 
 	}
+    
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+  	public String home(Model model) {
+      	
+  		return "managerHome";
+
+  	}
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String executeSecurity(ModelMap model,Principal principal) {
