@@ -37,6 +37,11 @@ public class HomeController {
     
     @RequestMapping(value = "/home1", method = RequestMethod.GET)
 	public String home1(Model model) {
+    	/*lisstThethao=find list new from cate truyen id
+    	model.add (the) thao
+    	
+    	listThoisu 
+    	model.addAllAttributes(thoisu);*/
     	
 		return "homePage";
 

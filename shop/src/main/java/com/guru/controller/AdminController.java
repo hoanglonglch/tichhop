@@ -120,5 +120,15 @@ public class AdminController {
 		return "redirect:/home";
 	}
 	
+	@RequestMapping(value="listNew", method = RequestMethod.GET)
+	public String listNew(Model model){
+		List<ParentCate> parentCates= repositoryParent.findAll();
+		for (ParentCate parentCate : parentCates) {
+			logger.info("parentCate name "+parentCate.getParentName());
+		}
+		model.addAttribute("parentCates",parentCates);
+		model.addAttribute("messeage","hello");
+		return "listNew";
+	}
 	
 }

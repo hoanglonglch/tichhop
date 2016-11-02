@@ -42,4 +42,7 @@
 	<definition name="createNew" extends="admin">
 		<put-attribute name="body" value="/resources/view/user/createNew.jsp" />
 	</definition>	
+	<definition name="listNew" extends="admin">
+		<put-attribute name="body" value="/resources/view/user/listNew.jsp" />
+	</definition>	
 </tiles-definitions>

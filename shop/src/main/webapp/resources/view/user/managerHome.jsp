@@ -23,7 +23,7 @@
 		<!-- using c:if here -->
 		<c:if test="${i == 0 }">
 		<div class="outertight">
-			<img src="${contextPath}/resources/images/${new1.image1}" alt="MyPassion" />
+			<img src="${contextPath}/resources/images/${new1.image1}" alt="MyPassion"  height="162" width="300" />
 			<h6 class="regular">
 				<a href="#">${new1.title}</a>
 			</h6>
@@ -37,9 +37,9 @@
 
 			<ul class="block" id="carousel">
 				<li><a href="#"><img src="${contextPath}/resources/images/${new1.image1}" alt="MyPassion"
-						class="alignleft" /></a>
+						class="alignleft" height="86" width="140" /></a>
 					<p>
-						<span>26 May, 2013.</span> <a href="#">new1.title.</a>
+						<span>26 May, 2013.</span> <a href="#">new1.title</a>
 					</p></li>
 
 
