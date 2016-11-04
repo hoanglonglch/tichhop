@@ -31,6 +31,9 @@
 	<definition name="managerHome" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/managerHome.jsp" />
 	</definition>	
+	<definition name="detail" extends="definition">
+		<put-attribute name="body" value="/resources/view/user/detail.jsp" />
+	</definition>	
 	
 	<!-- admin page -->
 	<definition name="admin" template="/resources/view/template/templateAdmin.jsp">

@@ -10,11 +10,14 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.guru.model.New;
 import com.guru.model.ParentCate;
 import com.guru.model.Role;
+import com.guru.repository.NewRepository;
 import com.guru.repository.ParentCateRepository;
 import com.guru.repository.RoleRepository;
 
@@ -25,6 +28,9 @@ public class HomeController {
 	
 	@Autowired
 	ParentCateRepository repositoryParent;
+	
+	@Autowired
+	NewRepository repositoryNew;
 	
 	@ModelAttribute("parentCates")
 	public List<ParentCate> getCategories(){
@@ -94,5 +100,34 @@ public class HomeController {
 		model.addAttribute("roles",roles);
 		return "listRole";
 		 }
+	
+	
+//	load detail page
+	@RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
+	 public String detailPage(ModelMap model,@PathVariable("id") String idNew) {
+		// request get id and return a detail page of new
+		logger.info("long dep trai");
+		New newObj=repositoryNew.findOne(Integer.parseInt(idNew));
+		model.addAttribute("newObj",newObj);
+		return "detail";
+		 }
+	
+	/*@RequestMapping(value = "/timeline/{page}", method = RequestMethod.GET)
+	public String timeLine(Model model, HttpServletRequest request,@PathVariable("page")int page) {
+		String name = (String) request.getSession().getAttribute("userName");
+		User user = userReponsitory.findByUserName(name);
+		logger.info("ten user do la"+user.getUserName());
+		int idUser = user.getId();
+		
+		List<Image> images = imageReponsitory.findByUserM_Id(idUser);
+		for (Image image : images) {
+			if(image.getCategoryM().getId() ==1){
+				model.addAttribute("image",image);
+			}
+			if(image.getCategoryM().getId()==2){
+				
+			}
+		}*/
+	
 	
 }

@@ -1,50 +1,53 @@
 package com.guru.model;
 
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name="news")
-public class New {
+@Table(name = "news")
+public class New  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String title;
-	
-	@Type(type="text")
+
+	@Type(type = "text")
 	private String content1;
 	private String image1;
 	private String imageTitle1;
-	
-	@Type(type="text")
+
+	@Type(type = "text")
 	private String content2;
 	private String image2;
 	private String imageTitle2;
-	
+
 	private Date date;
+	
+	 @Transient
+	private String splitContent;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "categories_id")
 	private Category category;
-	
-	/*@OneToMany(mappedBy = "newObj", cascade = CascadeType.ALL)
-	List<Image> images;*/
+
+	/*
+	 * @OneToMany(mappedBy = "newObj", cascade = CascadeType.ALL) List<Image>
+	 * images;
+	 */
 
 	public int getId() {
 		return id;
@@ -133,7 +136,14 @@ public class New {
 	public void setImageTitle2(String imageTitle2) {
 		this.imageTitle2 = imageTitle2;
 	}
+
+
+
 	
+	public String getSplitContent() {
+		return this.content1.substring(0,2);
+	}
+
 	
-	
+
 }
