@@ -1,9 +1,5 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +18,6 @@
 <link rel="shortcut icon" href="img/sms-4.ico" />
 
 <!-- STYLES -->
-<link rel="stylesheet" type="text/css"
-	href="./resources/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="./resources/css/superfish.css" media="screen" />
 <link rel="stylesheet" type="text/css"
@@ -85,9 +79,6 @@
 
 <!--[if lt IE 9]> <script type="text/javascript" src="./resources/js/html5.js"></script> <![endif]-->
 <script type="text/javascript" src="./resources/js/mypassion.js"></script>
-<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
 

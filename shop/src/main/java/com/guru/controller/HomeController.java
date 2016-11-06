@@ -1,10 +1,15 @@
 package com.guru.controller;
 
 import java.security.Principal;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -17,9 +22,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.guru.model.New;
 import com.guru.model.ParentCate;
 import com.guru.model.Role;
+import com.guru.model.User;
 import com.guru.repository.NewRepository;
 import com.guru.repository.ParentCateRepository;
 import com.guru.repository.RoleRepository;
+import com.guru.repository.UserRepository;
 
 @Controller
 @RequestMapping(value="/")
@@ -32,13 +39,17 @@ public class HomeController {
 	@Autowired
 	NewRepository repositoryNew;
 	
+	@Autowired
+	UserRepository repositoryUser;
+	
+	@Autowired
+	RoleRepository repositoryRole;
+	
 	@ModelAttribute("parentCates")
 	public List<ParentCate> getCategories(){
 		return repositoryParent.findAll(); 
 	}
 	
-	@Autowired
-	RoleRepository repositoryRole;
     private static Logger logger = Logger.getLogger(HomeController.class);
     
     @RequestMapping(value = "/home1", method = RequestMethod.GET)
@@ -53,7 +64,7 @@ public class HomeController {
 
 	}
     
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/managerHome", method = RequestMethod.GET)
   	public String home(Model model) {
       	
   		return "managerHome";
@@ -101,6 +112,24 @@ public class HomeController {
 		return "listRole";
 		 }
 	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	 public String register(ModelMap model) {
+		model.addAttribute("formUser",new User());
+		return "register";
+		 }
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	 public String register(ModelMap model,@ModelAttribute("formUser")User user) {
+		 Set<Role> roles= new HashSet<Role>(repositoryRole.findAll());
+		 Set<Role> roleUser= new HashSet<Role>();
+		 for (Role role : roles) {
+			 roleUser.add(role);
+			 break;
+		}
+		 user.setRoles(roleUser);
+		repositoryUser.save(user);
+		return "register";
+		 }
+	
 	
 //	load detail page
 	@RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
@@ -111,23 +140,19 @@ public class HomeController {
 		model.addAttribute("newObj",newObj);
 		return "detail";
 		 }
+	///////////////////////////////////////////////////
 	
-	/*@RequestMapping(value = "/timeline/{page}", method = RequestMethod.GET)
-	public String timeLine(Model model, HttpServletRequest request,@PathVariable("page")int page) {
-		String name = (String) request.getSession().getAttribute("userName");
-		User user = userReponsitory.findByUserName(name);
-		logger.info("ten user do la"+user.getUserName());
-		int idUser = user.getId();
-		
-		List<Image> images = imageReponsitory.findByUserM_Id(idUser);
-		for (Image image : images) {
-			if(image.getCategoryM().getId() ==1){
-				model.addAttribute("image",image);
-			}
-			if(image.getCategoryM().getId()==2){
-				
-			}
-		}*/
+	/*version 2 with load exactly one news*/
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	 public String Home(ModelMap model) {
+		Page<New> pageNew= repositoryNew.findByCategory_Id(1, new PageRequest(0,7));
+		List<New> news= pageNew.getContent();
+		model.addAttribute("listNew",news);
+		return "managerHome1";
+		 }
+	
+	
 	
 	
 }
