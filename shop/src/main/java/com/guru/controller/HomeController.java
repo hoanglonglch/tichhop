@@ -146,7 +146,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	 public String Home(ModelMap model) {
-		Page<New> pageNew= repositoryNew.findByCategory_Id(1, new PageRequest(0,7));
+		Page<New> pageNew= repositoryNew.findByCategory_Id(1, new PageRequest(0,4));
 		List<New> news= pageNew.getContent();
 		model.addAttribute("listNew",news);
 		return "managerHome1";
