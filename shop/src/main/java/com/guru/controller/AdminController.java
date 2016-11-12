@@ -3,7 +3,13 @@ package com.guru.controller;
 import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,7 +33,6 @@ import com.guru.repository.CategoryRepository;
 import com.guru.repository.NewRepository;
 import com.guru.repository.ParentCateRepository;
 import com.guru.repository.UserRepository;
-import com.sun.corba.se.impl.orbutil.RepositoryIdUtility;
 
 @Controller
 @RequestMapping(value="admin")
@@ -52,6 +57,19 @@ public class AdminController {
 	List<ParentCate> getParentCate(){
 		return repositoryParent.findAll(); 
 	}*/
+	 
+//	 this will load category for dropdownlist
+	 @ModelAttribute("listCategory")
+	 Map<String,String> getListCategory(){
+		 List<Category> categories=repositoryCate.findAll();
+		 Map<String,String> listCategory= new LinkedHashMap<String,String>();
+		 int i=1;
+		 for (Category category : categories) {
+			listCategory.put(i+"", category.getName());
+			i++;
+		}
+		 return listCategory;
+	 }
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String adminPage(ModelMap model) {
@@ -87,12 +105,49 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="createNew", method = RequestMethod.POST)
+	public String createNew(@ModelAttribute("newForm")New newForm,@RequestParam CommonsMultipartFile[] listFile,HttpServletRequest request,
+			Principal principal) throws ParseException, IllegalStateException, IOException{
+		
+	/*	get image1
+		then get category and principal*/
+		
+		String saveDirectory = request.getServletContext().getRealPath("/") + "/resources/images/";
+		boolean ok =true;
+		String image = "";
+		if (listFile != null && listFile.length > 0) {
+			for (CommonsMultipartFile aFile : listFile) {
+				image = aFile.getOriginalFilename();
+				if (!aFile.getOriginalFilename().equals("")) {
+					aFile.transferTo(new File(saveDirectory + aFile.getOriginalFilename()));
+				}
+				newForm.setImage1(image);
+				System.out.println("Saving file: " + aFile.getOriginalFilename());
+				logger.info("thu muc ten " + saveDirectory);
+				Category category=repositoryCate.findOne(Integer.parseInt(newForm.getCategory().getName()));
+				DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+				String day=df.format(newForm.getDate());
+				logger.info("day is "+day);
+				Date date1=df.parse(day);
+				newForm.setDate(date1);
+				newForm.setCategory(category);
+				User user=repositoryUser.findByUsername(principal.getName());
+				newForm.setUser(user);
+				repositoryNew.save(newForm);
+				return "redirect:/admin/listNew" ;
+			}
+		}
+		
+		return "createNew";
+	}
+	
+	
+	/*@RequestMapping(value="createNew", method = RequestMethod.POST)
 	public String createNew1(Model model,@ModelAttribute("newForm")New newForm, 
 			@RequestParam CommonsMultipartFile[] listFile,HttpServletRequest request,
 			Principal principal) throws IllegalStateException, IOException{
 		String saveDirectory = request.getServletContext().getRealPath("/") + "/resources/images/";
 		boolean ok =true;
-		String image = "";
+		image = aFile.getName();
 		if(listFile != null && listFile.length!=0){
 			for (CommonsMultipartFile aFile : listFile) {
 				image = aFile.getName();
@@ -118,7 +173,7 @@ public class AdminController {
 			
 		}
 		return "redirect:/home";
-	}
+	}*/
 	
 	@RequestMapping(value="listNew", method = RequestMethod.GET)
 	public String listNew(Model model){
