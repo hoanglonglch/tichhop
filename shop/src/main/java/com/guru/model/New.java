@@ -1,5 +1,6 @@
 package com.guru.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,11 +13,11 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import org.hibernate.annotations.Type;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "news")
-public class New  {
+public class New implements Serializable {
+	  private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -104,11 +105,11 @@ public class New  {
 	}
 	
 	public String getSplitContent2() {
-		return this.content1.substring(0,10);
+		return this.content1.substring(0,60);
 	}
 
 	public String getSplitContent() {
-		return this.content1.substring(0,30);
+		return this.content1.substring(0,256);
 	}
 
 	

@@ -2,7 +2,6 @@ package com.guru.controller;
 
 import java.security.Principal;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -10,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -146,9 +146,10 @@ public class HomeController {
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	 public String Home(ModelMap model) {
-		Page<New> pageNew= repositoryNew.findByCategory_Id(1, new PageRequest(0,4));
+//		Page<New> pageNew= repositoryNew.findByCategory_Id(1, new PageRequest(0,4));
+		Page<New> pageNew= repositoryNew.findByCategory_ParentCate_id(1, new PageRequest(0,4,Direction.DESC,"id"));
 		List<New> news= pageNew.getContent();
-		model.addAttribute("listNew",news);
+		model.addAttribute("listSport",news);
 		return "managerHome1";
 		 }
 	

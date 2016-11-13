@@ -132,7 +132,9 @@ public class AdminController {
 				newForm.setCategory(category);
 				User user=repositoryUser.findByUsername(principal.getName());
 				newForm.setUser(user);
+				
 				repositoryNew.save(newForm);
+				
 				return "redirect:/admin/listNew" ;
 			}
 		}
@@ -141,46 +143,11 @@ public class AdminController {
 	}
 	
 	
-	/*@RequestMapping(value="createNew", method = RequestMethod.POST)
-	public String createNew1(Model model,@ModelAttribute("newForm")New newForm, 
-			@RequestParam CommonsMultipartFile[] listFile,HttpServletRequest request,
-			Principal principal) throws IllegalStateException, IOException{
-		String saveDirectory = request.getServletContext().getRealPath("/") + "/resources/images/";
-		boolean ok =true;
-		image = aFile.getName();
-		if(listFile != null && listFile.length!=0){
-			for (CommonsMultipartFile aFile : listFile) {
-				image = aFile.getName();
-				logger.info("image name la"+image);
-				if (!aFile.getOriginalFilename().equals("")) {
-					aFile.transferTo(new File(saveDirectory +aFile.getOriginalFilename()));
-					
-					//user,category chua co
-					if(ok){
-						User user=repositoryUser.findByUsername(principal.getName());
-						Category category= repositoryCate.findByName(newForm.getCategory().getName());
-						newForm.setUser(user);
-						newForm.setCategory(category);
-						newForm.setImage1(aFile.getOriginalFilename());
-						ok=false;
-					}else{
-						newForm.setImage2(aFile.getOriginalFilename());
-						repositoryNew.save(newForm);
-					}
-				}
-			}
-			logger.info("save directory "+saveDirectory);
-			
-		}
-		return "redirect:/home";
-	}*/
+	
 	
 	@RequestMapping(value="listNew", method = RequestMethod.GET)
 	public String listNew(Model model){
 		List<ParentCate> parentCates= repositoryParent.findAll();
-		for (ParentCate parentCate : parentCates) {
-			logger.info("parentCate name "+parentCate.getParentName());
-		}
 		model.addAttribute("parentCates",parentCates);
 		model.addAttribute("messeage","hello");
 		return "listNew";

@@ -35,6 +35,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+	config.entities_latin = false;
 	
 	/*http://localhost:8080/shop/resources/ckfinder/ckfinder.html
 */	config.filebrowserBrowseUrl = '/shop/resources/ckfinder/ckfinder.html';

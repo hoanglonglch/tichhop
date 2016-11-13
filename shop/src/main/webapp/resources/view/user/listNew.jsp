@@ -25,7 +25,7 @@
 								<td>${category.name}</td>
 								<td>${new1.id}</td>
 								<td>${new1.title}</td>
-								<td>${new1.image1}</td>
+								<td>${new1.splitContent}</td>
 							</tr>
 						</tbody>
 					</c:forEach>

@@ -1,6 +1,7 @@
 package com.guru.model;
 
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -18,7 +19,8 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable{
+	  private static final long serialVersionUID = 1L;
     private int id;
     private String username;
     private String password;
