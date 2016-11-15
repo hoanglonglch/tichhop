@@ -19,28 +19,28 @@
 
 <!-- STYLES -->
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/superfish.css" media="screen" />
+	href="/shop/resources/css/superfish.css" media="screen" />
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/fontello/fontello.css" />
+	href="/shop/resources/css/fontello/fontello.css" />
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/flexslider.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="./resources/css/ui.css" />
-<link rel="stylesheet" type="text/css" href="./resources/css/base.css" />
-<link rel="stylesheet" type="text/css" href="./resources/css/style.css" />
-<link rel="stylesheet" type="text/css" href="./resources/css/960.css" />
+	href="/shop/resources/css/flexslider.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/shop/resources/css/ui.css" />
+<link rel="stylesheet" type="text/css" href="/shop/resources/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/shop/resources/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/resources/css/960.css" />
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/devices/1000.css"
+	href="/shop/resources/css/devices/1000.css"
 	media="only screen and (min-width: 768px) and (max-width: 1000px)" />
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/devices/767.css"
+	href="/shop/resources/css/devices/767.css"
 	media="only screen and (min-width: 480px) and (max-width: 767px)" />
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/devices/479.css"
+	href="/shop/resources/css/devices/479.css"
 	media="only screen and (min-width: 200px) and (max-width: 479px)" />
 <link
 	href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800'
 	rel='stylesheet' type='text/css'>
-<!--[if lt IE 9]> <script type="text/javascript" src="./resources/js/customM.js"></script> <![endif]-->
+<!--[if lt IE 9]> <script type="text/javascript" src="/shop/resources/js/customM.js"></script> <![endif]-->
 
 
 </head>
@@ -65,20 +65,20 @@
 	</div>
 
 <!-- SCRIPTS -->
-<script type="text/javascript" src="./resources/js/jquery.js"></script>
-<script type="text/javascript" src="./resources/js/easing.min.js"></script>
-<script type="text/javascript" src="./resources/js/1.8.2.min.js"></script>
-<script type="text/javascript" src="./resources/js/ui.js"></script>
-<script type="text/javascript" src="./resources/js/carouFredSel.js"></script>
-<script type="text/javascript" src="./resources/js/superfish.js"></script>
-<script type="text/javascript" src="./resources/js/customM.js"></script>
-<script type="text/javascript" src="./resources/js/flexslider-min.js"></script>
-<script type="text/javascript" src="./resources/js/jtwt.min.js"></script>
-<script type="text/javascript" src="./resources/js/jflickrfeed.min.js"></script>
-<script type="text/javascript" src="./resources/js/mobilemenu.js"></script>
+<script type="text/javascript" src="/shop/resources/js/jquery.js"></script>
+<script type="text/javascript" src="/shop/resources/js/easing.min.js"></script>
+<script type="text/javascript" src="/shop/resources/js/1.8.2.min.js"></script>
+<script type="text/javascript" src="/shop/resources/js/ui.js"></script>
+<script type="text/javascript" src="/shop/resources/js/carouFredSel.js"></script>
+<script type="text/javascript" src="/shop/resources/js/superfish.js"></script>
+<script type="text/javascript" src="/shop/resources/js/customM.js"></script>
+<script type="text/javascript" src="/shop/resources/js/flexslider-min.js"></script>
+<script type="text/javascript" src="/shop/resources/js/jtwt.min.js"></script>
+<script type="text/javascript" src="/shop/resources/js/jflickrfeed.min.js"></script>
+<script type="text/javascript" src="/shop/resources/js/mobilemenu.js"></script>
 
-<!--[if lt IE 9]> <script type="text/javascript" src="./resources/js/html5.js"></script> <![endif]-->
-<script type="text/javascript" src="./resources/js/mypassion.js"></script>
+<!--[if lt IE 9]> <script type="text/javascript" src="/shop/resources/js/html5.js"></script> <![endif]-->
+<script type="text/javascript" src="/shop/resources/js/mypassion.js"></script>
 </body>
 </html>
 

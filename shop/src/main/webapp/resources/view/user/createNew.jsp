@@ -49,5 +49,5 @@
 		<button type="submit" class="btn btn-default">Submit</button>
 	</form:form>
 </div>
-<ckeditor:replace replace="content1" basePath="/ckeditor/" />
+<ckeditor:replace replace="content1" basePath="/ckeditor1/" />
 <ckfinder:setupCKEditor basePath="/shop/resources/ckfinder" />

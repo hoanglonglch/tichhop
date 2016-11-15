@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<
 <c:set var="i" value="0"></c:set>
 <!-- Life Style -->
 <div class="column-two-third">

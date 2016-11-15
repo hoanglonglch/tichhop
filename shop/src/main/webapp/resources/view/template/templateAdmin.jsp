@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
+	src="${pageContext.request.contextPath}/resources/ckeditor1/ckeditor.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/ckfinder/ckfinder.js"></script>
 <%-- <script type="text/javascript"
