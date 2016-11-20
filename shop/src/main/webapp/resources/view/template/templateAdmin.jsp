@@ -22,6 +22,7 @@
   <script>
   $( function() {
     $( "#datepicker" ).datepicker();
+    
   } );
   </script>
 <title>Insert title here</title>

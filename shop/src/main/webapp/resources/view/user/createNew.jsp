@@ -35,15 +35,15 @@
 				id="content1" />
 		</div>
 
-		<div class="form-group">
+		<%-- <div class="form-group">
 			<label for="exampleInputFile">date time</label>
 			<div class="form-group">
-				<%-- <form:input path="date" type="date" pattern="yyyy-MM-dd"/> --%>
+				<form:input path="date" type="date" pattern="yyyy-MM-dd"/>
 				<!-- <p>Date: <input type="text" id="datepicker"></p> -->
 				<form:input path="date" type="text"  id="datepicker"/>
 
 			</div>
-		</div>
+		</div> --%>
 
 
 		<button type="submit" class="btn btn-default">Submit</button>

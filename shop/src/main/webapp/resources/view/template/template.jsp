@@ -54,8 +54,8 @@
 					<div class="container">
 						<div class="main-content">
 							<tiles:insertAttribute name="body" />
-							<%-- <tiles:insertAttribute name="leftSide" /> --%>
 						</div>
+							<tiles:insertAttribute name="leftSide" />
 					</div>
 				</section>
 

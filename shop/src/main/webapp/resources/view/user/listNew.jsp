@@ -7,29 +7,31 @@
 
 		<div class="table-responsive">
 			<table class="table">
-				<c:forEach items="${parentCate.categories}" var="category">
+				
 				<c:set var="listNews" value="${category.news}"></c:set>
 				
 				<!-- sort list here -->
-					<c:forEach items="${category.news}" var="new1">
+					
 						<thead>
 							<tr>
 								<th>category</th>
 								<th>id new</th>
 								<th>new title</th>
-								<th>image1</th>
+								<th>content</th>
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach items="${parentCate.categories}" var="category">
+						<c:forEach items="${category.news}" var="new1">
 							<tr>
 								<td>${category.name}</td>
 								<td>${new1.id}</td>
 								<td>${new1.title}</td>
-								<td>${new1.splitContent}</td>
+								<td>${new1.splitContent2}</td>
 							</tr>
-						</tbody>
 					</c:forEach>
 				</c:forEach>
+						</tbody>
 			</table>
 		</div>
 </div>

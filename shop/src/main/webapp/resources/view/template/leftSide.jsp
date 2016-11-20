@@ -22,19 +22,20 @@
                     <div class="sidebar">
                     	<h5 class="line"><span>Ads Spot.</span></h5>
                         <ul class="ads125">
-                        	<li><a href="#"><img src="img/banner/3.png" alt="MyPassion" /></a></li>
-                            <li><a href="#"><img src="img/banner/1.png" alt="MyPassion" /></a></li>
-                            <li><a href="#"><img src="img/banner/2.png" alt="MyPassion" /></a></li>
-                            <li><a href="#"><img src="img/banner/4.png" alt="MyPassion" /></a></li>
+                        	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
+                        	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
+                        	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
+                        	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
                         </ul>
                     </div>
                     
+                    <!-- this slider will load related post -->
                     <div class="sidebar">
                     	<div id="tabs">
                             <ul>
                                 <li><a href="#tabs1">Recent.</a></li>
                                 <li><a href="#tabs2">Popular.</a></li>
-                                <li><a href="#tabs3">Comments.</a></li>
+                                
                             </ul>
                             <div id="tabs1">
                                 <ul>
@@ -84,25 +85,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div id="tabs3">
-                                <ul>
-                                	<li>
-                                    	<a href="#" class="title"><strong>Someone:</strong> eleifend est et turpis. Duis id erat.Mauris eleifend est et turpis. Duis id erat.</a>
-                                    </li>
-                                    <li>
-                                    	<a href="#" class="title"><strong>Someone:</strong> eleifend est et turpis. Duis id erat.Mauris eleifend est et turpis. Duis id erat.</a>
-                                    </li>
-                                    <li>
-                                    	<a href="#" class="title"><strong>Someone:</strong> eleifend est et turpis. Duis id erat.Mauris eleifend est et turpis. Duis id erat.</a>
-                                    </li>
-                                    <li>
-                                    	<a href="#" class="title"><strong>Someone:</strong> eleifend est et turpis. Duis id erat.Mauris eleifend est et turpis. Duis id erat.</a>
-                                    </li>
-                                    <li>
-                                    	<a href="#" class="title"><strong>Someone:</strong> eleifend est et turpis. Duis id erat.Mauris eleifend est et turpis. Duis id erat.</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            
                         </div>
                     </div>
                     
@@ -110,11 +93,11 @@
                     
                     <div class="sidebar">
                     	<h5 class="line"><span>Ads Spot.</span></h5>
-                        <a href="#"><img src="img/tf_300x250_v1.gif" alt="MyPassion" /></a>     
+                        <a href="#"><img src="/shop/resources/img/tf_300x250_v1.gif" alt="MyPassion" /></a>     
                     </div>
                 	
                     <div class="sidebar">
                     	<h5 class="line"><span>Facebook.</span></h5>
-                        <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fenvato&amp;width=298&amp;height=258&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color=%23BCBCBC&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:298px; height:258px;" allowTransparency="true"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fenclaveit%2F%3Ffref%3Dts&tabs=timeline&width=298&height=258&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="298" height="258" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                     </div>
                 </div>

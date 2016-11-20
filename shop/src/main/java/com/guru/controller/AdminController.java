@@ -124,12 +124,15 @@ public class AdminController {
 				System.out.println("Saving file: " + aFile.getOriginalFilename());
 				logger.info("thu muc ten " + saveDirectory);
 				Category category=repositoryCate.findOne(Integer.parseInt(newForm.getCategory().getName()));
-				DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-				String day=df.format(newForm.getDate());
-				logger.info("day is "+day);
+				
+				String pattern="yyyy-MM-dd hh:mm:ss";
+				DateFormat df = new SimpleDateFormat(pattern);
+				Date date = new Date();
+				String day=df.format(date);
 				Date date1=df.parse(day);
 				newForm.setDate(date1);
 				newForm.setCategory(category);
+				
 				User user=repositoryUser.findByUsername(principal.getName());
 				newForm.setUser(user);
 				

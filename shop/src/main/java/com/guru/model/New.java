@@ -109,7 +109,7 @@ public class New implements Serializable {
 	}
 
 	public String getSplitContent() {
-		return this.content1.substring(0,256);
+		return this.content1.substring(0,255);
 	}
 
 	
