@@ -49,6 +49,12 @@ public class HomeController {
 	public List<ParentCate> getCategories(){
 		return repositoryParent.findAll(); 
 	}
+	@ModelAttribute("latetyNew")
+	public List<New> getLatetyNew(){
+		Page<New> pageLatetyNew=repositoryNew.findTop4ByOrderByIdDesc(new PageRequest(0, 4));
+		List<New> latetyNew=pageLatetyNew.getContent();
+		return latetyNew;
+	}
 	
     private static Logger logger = Logger.getLogger(HomeController.class);
     

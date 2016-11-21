@@ -2,8 +2,6 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <div class="column-two-third single">
-	${contextPath}
-	<c:out value="${contextPath}"></c:out>
 	<h1>${newObj.title}</h1>
 	
 	<p>${newObj.content1}</p>

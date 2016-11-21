@@ -53,6 +53,8 @@
 				<section id="content">
 					<div class="container">
 						<div class="main-content">
+							<!--  add related and recent new -->
+							<tiles:insertAttribute name="latelyNew" />
 							<tiles:insertAttribute name="body" />
 						</div>
 							<tiles:insertAttribute name="leftSide" />

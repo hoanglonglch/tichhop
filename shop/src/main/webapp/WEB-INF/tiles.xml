@@ -3,18 +3,16 @@
 "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-
+<!-- homepage -->
 	<definition name="definition" template="/resources/view/template/template.jsp">
 		<put-attribute name="header" value="/resources/view/template/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/resources/view/template/footer.jsp" />
-		
 		<put-attribute name="slider" value="/resources/view/template/slider.jsp" />
-		
 		<put-attribute name="leftSide" value="/resources/view/template/leftSide.jsp" />
-		<put-attribute name="topbar" value="/resources/view/template/topbar.jsp" />
-		<put-attribute name="mainmenu" value="/resources/view/template/mainmenu.jsp" />
+		<put-attribute name="latelyNew" value="/resources/view/template/latelyNew.jsp" />
 	</definition>
+	
 	
 	<definition name="welcome" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/welcome.jsp" />
@@ -31,14 +29,24 @@
 	<definition name="managerHome" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/managerHome.jsp" />
 	</definition>	
-	<definition name="detail" extends="definition">
-		<put-attribute name="body" value="/resources/view/user/detail.jsp" />
-	</definition>	
+	
 	<definition name="managerHome1" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/managerHome1.jsp" />
 	</definition>	
 	<definition name="register" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/register.jsp" />
+	</definition>	
+	
+	
+	<!-- template for single page -->
+	<definition name="definition2" template="/resources/view/template/template2.jsp">
+		<put-attribute name="header" value="/resources/view/template/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/resources/view/template/footer.jsp" />
+		<put-attribute name="leftSide" value="/resources/view/template/leftSide.jsp" />
+	</definition>
+	<definition name="detail" extends="definition2">
+		<put-attribute name="body" value="/resources/view/user/detail.jsp" />
 	</definition>	
 	
 	<!-- admin page -->
