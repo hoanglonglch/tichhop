@@ -1,52 +1,35 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <section id="slider">
-            <div class="container">
-                <div class="main-slider">
-                	<div class="badg">
-                    	<p><a href="#">Popular.</a></p>
-                    </div>
-                	<div class="flexslider">
-                        <ul class="slides">
-                            <li>
-                                <img src="/shop/resources/img/flexslider/1.png" alt="MyPassion" />
-                                <p class="flex-caption"><a href="#">Google wants more women in tech.</a> Donec bibendum dolor at ante. Proin neque dui, pre tium quis fringilla ut,  sodales sed. </p>
-                            </li>
-                            <li>
-                                <img src="/shop/resources/img/flexslider/3.png" alt="MyPassion" />
-                                <p class="flex-caption"><a href="#">Small Businesses Surge against all expectations.</a> Donec bibendum dolor at ante. Proin neque dui, pre tium quis fringilla ut,  sodales sed. </p>
-                            </li>
-                            <li>
-                                <img src="/shop/resources/img/flexslider/5.png" alt="MyPassion" />
-                                <p class="flex-caption"><a href="#">Drones: Future of disaster response?</a> Donec bibendum dolor at ante. Proin neque dui, pre tium quis fringilla ut,  sodales sed. </p>
-                            </li>
-                            <li>
-                                <img src="/shop/resources/img/flexslider/4.png" alt="MyPassion" />
-                                <p class="flex-caption"><a href="#">Hollywood cowboys' retreat. </a> Donec bibendum dolor at ante. Proin neque dui, pre tium quis fringilla ut,  sodales sed. </p>
-                            </li>
-                            <li>
-                                <img src="/shop/resources/img/flexslider/2.png" alt="MyPassion" />
-                                <p class="flex-caption"><a href="#">Stress may cause cravings.</a> Donec bibendum dolor at ante. Proin neque dui, pre tium quis fringilla ut,  sodales sed. </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="slider2">
-                	<div class="badg">
-                    	<p><a href="#">Latest.</a></p>
-                    </div>
-                    <a href="#"><img src="/shop/resources/img/flexslider/6.png" alt="MyPassion" /></a>
-                    <p class="caption"><a href="#">We Are News.</a> Donec bibendum dolor at ante. Proin neque dui, pre tium quis fringilla ut,  sodales sed metus. </p>
-                </div>
-                
-                <div class="slider3">
-                	<a href="#"><img src="/shop/resources/img/trash/3.png" alt="MyPassion" /></a>
-                    <p class="caption"><a href="#">Happy Birthday, blue jeans! </a></p>
-                </div>
-                
-                <div class="slider3">
-                	<a href="#"><img src="/shop/resources/img/trash/4.png" alt="MyPassion" /></a>
-                    <p class="caption"><a href="#">Fantasy Family Photos </a></p>
-                </div>
-                
-            </div>    
-        </section>
+	<div class="container">
+		<div class="main-slider">
+			<div class="badg">
+				<p>
+					<a href="#">Popular.</a>
+				</p>
+			</div>
+			<div class="flexslider">
+				<ul class="slides">
+					<c:forEach items="${latetyNew}" var="item">
+						<li><img src="${contextPath}/resources/images/${item.image1}"
+							alt="MyPassion" width="540" height="372" />
+							<p class="flex-caption">
+								<a href="${contextPath}/new/${item.id}">${item.title}</a>
+							</p></li>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
+
+		<c:forEach items="${hotNew}" var="item">
+		<div class="slider3">
+			<a href="#"><img src="${contextPath}/resources/images/${item.image1}" width="180" height="135"
+				alt="MyPassion" /></a>
+			<p class="caption">
+				<a href="${contextPath}/new/${item.id}">${item.title}</a>
+			</p>
+		</div>
+		</c:forEach>
+
+	</div>
+</section>

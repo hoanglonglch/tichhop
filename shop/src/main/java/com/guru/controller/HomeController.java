@@ -55,6 +55,12 @@ public class HomeController {
 		List<New> latetyNew=pageLatetyNew.getContent();
 		return latetyNew;
 	}
+	@ModelAttribute("hotNew")
+	public List<New> getHotNew(){
+		Page<New> hotNewPage=repositoryNew.findAll(new PageRequest(0, 4,Direction.DESC,"count"));
+		List<New> hotNews=hotNewPage.getContent();
+		return hotNews;
+	}
 	
     private static Logger logger = Logger.getLogger(HomeController.class);
     
@@ -141,8 +147,10 @@ public class HomeController {
 	@RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
 	 public String detailPage(ModelMap model,@PathVariable("id") String idNew) {
 		// request get id and return a detail page of new
-		logger.info("long dep trai");
 		New newObj=repositoryNew.findOne(Integer.parseInt(idNew));
+		int count=newObj.getCount();
+		newObj.setCount(++count);
+		repositoryNew.saveAndFlush(newObj);
 		model.addAttribute("newObj",newObj);
 		return "detail";
 		 }

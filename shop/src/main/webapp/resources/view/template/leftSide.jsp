@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <div class="column-one-third">
                 	<div class="sidebar">
                     	<h5 class="line"><span>Stay Connected.</span></h5>
@@ -39,50 +41,24 @@
                             </ul>
                             <div id="tabs1">
                                 <ul>
-                                	<li>
-                                    	<a href="#" class="title">Blandit Rutrum, Erat et Sagittis Adipcising Elit.</a>
-                                        <span class="meta">26 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
-                                        <span class="rating"><span style="width:70%;"></span></span>
-                                    </li>
+                                <c:forEach items="${latetyNew}" var="item">
                                     <li>
-                                    	<a href="#" class="title">Blandit Rutrum, Erat et Sagittis Adipcising Elit.</a>
-                                        <span class="meta">26 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
+                                    	<a href="${contextPath}/new/${item.id}" class="title">${item.title}</a>
+                                        <span class="meta">26 May, 2013.\\<a href="#">${item.category.name}</a>  
                                         <span class="rating"><span style="width:70%;"></span></span>
                                     </li>
-                                    <li>
-                                    	<a href="#" class="title">Blandit Rutrum, Erat et Sagittis Adipcising Elit.</a>
-                                        <span class="meta">26 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
-                                        <span class="rating"><span style="width:70%;"></span></span>
-                                    </li>
-                                    <li>
-                                    	<a href="#" class="title">Blandit Rutrum, Erat et Sagittis Adipcising Elit.</a>
-                                        <span class="meta">26 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
-                                        <span class="rating"><span style="width:70%;"></span></span>
-                                    </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                             <div id="tabs2">
                                 <ul>
-                                	<li>
-                                    	<a href="#" class="title">Mauris eleifend est et turpis. Duis id erat.</a>
-                                        <span class="meta">27 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
-                                        <span class="rating"><span style="width:70%;"></span></span>
-                                    </li>
+                                <c:forEach items="${hotNew}" var="item">
                                     <li>
-                                    	<a href="#" class="title">Mauris eleifend est et turpis. Duis id erat.</a>
-                                        <span class="meta">27 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
+                                    	<a href="${contextPath}/new/${item.id}" class="title">${item.title}</a>
+                                        <span class="meta">26 May, 2013.\\<a href="#">${item.category.name}</a>  
                                         <span class="rating"><span style="width:70%;"></span></span>
                                     </li>
-                                    <li>
-                                    	<a href="#" class="title">Mauris eleifend est et turpis. Duis id erat.</a>
-                                        <span class="meta">27 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
-                                        <span class="rating"><span style="width:70%;"></span></span>
-                                    </li>
-                                    <li>
-                                    	<a href="#" class="title">Mauris eleifend est et turpis. Duis id erat.</a>
-                                        <span class="meta">27 May, 2013.   \\   <a href="#">World News.</a>   \\   <a href="#">No Coments.</a></span>
-                                        <span class="rating"><span style="width:70%;"></span></span>
-                                    </li>
+							</c:forEach>
                                 </ul>
                             </div>
                             
@@ -90,11 +66,11 @@
                     </div>
                     
                    
-                    
+                  <!--   
                     <div class="sidebar">
                     	<h5 class="line"><span>Ads Spot.</span></h5>
                         <a href="#"><img src="/shop/resources/img/tf_300x250_v1.gif" alt="MyPassion" /></a>     
-                    </div>
+                    </div> -->
                 	
                     <div class="sidebar">
                     	<h5 class="line"><span>Facebook.</span></h5>

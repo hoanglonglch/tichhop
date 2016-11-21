@@ -22,6 +22,7 @@ public class New implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String title;
+	private int count;
 
 	@Type(type = "text")
 	private String content1;
@@ -111,6 +112,15 @@ public class New implements Serializable {
 	public String getSplitContent() {
 		return this.content1.substring(0,255);
 	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
 
 	
 

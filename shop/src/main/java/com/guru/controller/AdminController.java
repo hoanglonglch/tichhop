@@ -132,9 +132,9 @@ public class AdminController {
 				Date date1=df.parse(day);
 				newForm.setDate(date1);
 				newForm.setCategory(category);
-				
 				User user=repositoryUser.findByUsername(principal.getName());
 				newForm.setUser(user);
+				newForm.setCount(1);
 				
 				repositoryNew.save(newForm);
 				
