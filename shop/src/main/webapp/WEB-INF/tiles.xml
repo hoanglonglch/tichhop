@@ -33,9 +33,7 @@
 	<definition name="managerHome1" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/managerHome1.jsp" />
 	</definition>	
-	<definition name="register" extends="definition">
-		<put-attribute name="body" value="/resources/view/user/register.jsp" />
-	</definition>	
+		
 	
 	
 	<!-- template for single page -->
@@ -48,6 +46,12 @@
 	<definition name="detail" extends="definition2">
 		<put-attribute name="body" value="/resources/view/user/detail.jsp" />
 	</definition>	
+	<definition name="register" extends="definition2">
+		<put-attribute name="body" value="/resources/view/user/register.jsp" />
+	</definition>
+	<definition name="ParentCateNew" extends="definition2">
+		<put-attribute name="body" value="/resources/view/user/ParentCateNew.jsp" />
+	</definition>
 	
 	<!-- admin page -->
 	<definition name="admin" template="/resources/view/template/templateAdmin.jsp">

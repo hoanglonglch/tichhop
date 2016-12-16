@@ -133,11 +133,14 @@ public class HomeController {
 	 public String register(ModelMap model,@ModelAttribute("formUser")User user) {
 		 Set<Role> roles= new HashSet<Role>(repositoryRole.findAll());
 		 Set<Role> roleUser= new HashSet<Role>();
+		 
 		 for (Role role : roles) {
-			 roleUser.add(role);
-			 break;
+			 if(2 == role.getId()){
+				 roleUser.add(role);
+				 break;
+			 }
 		}
-		 user.setRoles(roleUser);
+		user.setRoles(roleUser);
 		repositoryUser.save(user);
 		return "register";
 		 }
@@ -170,6 +173,18 @@ public class HomeController {
 		return "managerHome1";
 		 }
 	
+//	load New by category
+	@RequestMapping(value = "/parentCateNew/{idParent}/{page}", method = RequestMethod.GET)
+	public String loadParentCateNew(@PathVariable("idParent")int idParent,@PathVariable("page")int page,
+			Model model){
+		Page<New> pageNew= repositoryNew.findByCategory_ParentCate_id(idParent, new PageRequest(page,2,Direction.DESC,"id"));
+		List<New> news = pageNew.getContent();
+		int totalPage = pageNew.getTotalPages();
+		model.addAttribute("listNew", news);
+		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("idParent",idParent);
+		return "ParentCateNew";
+	}
 	
 	
 	

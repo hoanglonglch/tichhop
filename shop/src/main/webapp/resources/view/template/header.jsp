@@ -1,5 +1,6 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <header id="header">
 	<div class="container">
 		<div class="column">
@@ -22,11 +23,11 @@
 					<li class="current"><a href="index-2.html">Home.</a></li>
 					
 					<c:forEach items="${parentCates}" var="parentCate">
-						<li><a href="#">${parentCate.parentName}</a>
+						<li><a href="${contextPath}/parentCateNew/${parentCate.id}/0">${parentCate.parentName}</a>
 							<ul>
 							<c:forEach items="${parentCate.categories}" var="category">
 								<li><i class="icon-right-open"></i><a
-								href="a.html">${category.name}</a></li>
+								href="#">${category.name}</a></li>
 							</c:forEach>
 							</ul>
 						</li>
