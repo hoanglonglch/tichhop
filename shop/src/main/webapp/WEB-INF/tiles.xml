@@ -66,4 +66,7 @@
 	<definition name="listNew" extends="admin">
 		<put-attribute name="body" value="/resources/view/user/listNew.jsp" />
 	</definition>	
+	<definition name="userCreateNew" extends="admin">
+		<put-attribute name="body" value="/resources/view/user/userCreateNew.jsp" />
+	</definition>	
 </tiles-definitions>
