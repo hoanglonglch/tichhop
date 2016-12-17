@@ -23,6 +23,7 @@ public class New implements Serializable {
 	private int id;
 	private String title;
 	private int count;
+	private int flag;
 
 	@Type(type = "text")
 	private String content1;
@@ -120,6 +121,15 @@ public class New implements Serializable {
 	public void setCount(int count) {
 		this.count = count;
 	}
+
+	public int getFlag() {
+		return flag;
+	}
+
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
+	
 	
 
 	

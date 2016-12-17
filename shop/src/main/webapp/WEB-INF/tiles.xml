@@ -29,10 +29,10 @@
 	<definition name="managerHome" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/managerHome.jsp" />
 	</definition>	
-	
 	<definition name="managerHome1" extends="definition">
 		<put-attribute name="body" value="/resources/view/user/managerHome1.jsp" />
 	</definition>	
+	
 		
 	
 	
@@ -68,5 +68,14 @@
 	</definition>	
 	<definition name="userCreateNew" extends="admin">
 		<put-attribute name="body" value="/resources/view/user/userCreateNew.jsp" />
+	</definition>
+	<definition name="403" extends="admin">
+		<put-attribute name="body" value="/resources/view/user/403.jsp" />
+	</definition>		
+	<definition name="approvalNew" extends="admin">
+		<put-attribute name="body" value="/resources/view/user/approvalNew.jsp" />
+	</definition>	
+	<definition name="detailNewsAdmin" extends="admin">
+		<put-attribute name="body" value="/resources/view/user/detailNewsAdmin.jsp" />
 	</definition>	
 </tiles-definitions>

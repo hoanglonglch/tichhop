@@ -91,6 +91,7 @@ public class UserController {
 				Date date1 = df.parse(day);
 				newForm.setDate(date1);
 				newForm.setCategory(category);
+				newForm.setFlag(0);
 				User user = repositoryUser.findByUsername(principal.getName());
 				newForm.setUser(user);
 				newForm.setCount(1);

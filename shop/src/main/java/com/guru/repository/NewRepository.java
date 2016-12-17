@@ -12,5 +12,10 @@ public interface NewRepository extends JpaRepository<New,Integer>{
 	Page<New> findAll(Pageable pageable);
 	Page<New> findByCategory_Id(int id,Pageable pageable);
 	Page<New> findByCategory_ParentCate_id(int id,Pageable pageable);
+	
 	Page<New> findTop4ByOrderByIdDesc(Pageable pageable);
+	
+	Page<New> findByFlagAndCategory_parentCate_id(int id,int flag,Pageable pageabble);
+	List<New> findByFlag(int flag);
+	
 }

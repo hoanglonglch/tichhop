@@ -20,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -70,7 +71,12 @@ public class AdminController {
 		}
 		 return listCategory;
 	 }
-	
+	 @RequestMapping(value = "/403", method = RequestMethod.GET)
+	 public String accessDenied(ModelMap model, Principal principal) {
+	  String username = principal.getName();
+	  model.addAttribute("message", "Sorry "+username+" You don't have privileges to view this page!!!");
+	  return "403";
+	 }
 	@RequestMapping(method = RequestMethod.GET)
 	public String adminPage(ModelMap model) {
 		model.addAttribute("message", "this is admin page");
@@ -132,6 +138,7 @@ public class AdminController {
 				Date date1=df.parse(day);
 				newForm.setDate(date1);
 				newForm.setCategory(category);
+				newForm.setFlag(1);
 				User user=repositoryUser.findByUsername(principal.getName());
 				newForm.setUser(user);
 				newForm.setCount(1);
@@ -145,9 +152,6 @@ public class AdminController {
 		return "createNew";
 	}
 	
-	
-	
-	
 	@RequestMapping(value="listNew", method = RequestMethod.GET)
 	public String listNew(Model model){
 		List<ParentCate> parentCates= repositoryParent.findAll();
@@ -155,5 +159,33 @@ public class AdminController {
 		model.addAttribute("messeage","hello");
 		return "listNew";
 	}
+	@RequestMapping(value="approvalNew", method = RequestMethod.GET)
+	public String approvalNew(Model model){
+		List<New> listNew= repositoryNew.findByFlag(0);
+		model.addAttribute("approvalNew1",listNew);
+		return "approvalNew";
+	}
+	
+	
+//	load new detail
+	@RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
+	 public String detailPage(ModelMap model,@PathVariable("id") String idNew) {
+		// request get id and return a detail page of new
+		New newObj=repositoryNew.findOne(Integer.parseInt(idNew));
+		model.addAttribute("newObj",newObj);
+		return "detailNewsAdmin";
+		 }
+	
+	@RequestMapping(value = "/upload", method = RequestMethod.GET)
+	public String uploadNew(ModelMap model, @RequestParam("id") String id) {
+		// request get id and return a detail page of new
+		int id1= Integer.parseInt(id);
+		New newObj=repositoryNew.findOne(id1);
+		newObj.setFlag(1);
+		repositoryNew.save(newObj);
+		return "redirect:http://localhost:8080/shop/admin/approvalNew/";
+	}
+	
+	
 	
 }

@@ -10,10 +10,4 @@
 		\\
 	</span>
 	
-	
-	<ul class="sharebox">
-		<li><a href="#"><span class="twitter">Tweet</span></a></li>
-		<li><a href="#"><span class="pinterest">Pin it</span></a></li>
-		<li><a href="#"><span class="facebook">Like</span></a></li>
-	</ul>
 </div>
