@@ -171,7 +171,7 @@ public class HomeController {
 		model.addAttribute("listSport",news);
 		
 //		Page<New> pageNew2= repositoryNew.findByCategory_ParentCate_id(2, new PageRequest(0,4,Direction.DESC,"id"));
-		Page<New> pageNew2= repositoryNew.findByFlagAndCategory_parentCate_id(2,1, new PageRequest(0,4,Direction.DESC,"id"));
+		Page<New> pageNew2= repositoryNew.findByFlagAndCategory_parentCate_id(1,2, new PageRequest(0,4,Direction.DESC,"id"));
 		List<New> news2= pageNew2.getContent();
 		model.addAttribute("listDaily",news2);
 		return "managerHome1";
