@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="column">
 			<div class="logo">
-				<a href="index-2.html"><img src="img/logo.png" alt="MyPassion" /></a>
+				<a href="index-2.html"><img src="${contextPath}/resources/img/logo.png" alt="MyPassion" /></a>
 			</div>
 
 			<div class="search">

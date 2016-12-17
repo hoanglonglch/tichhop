@@ -24,10 +24,10 @@
                     <div class="sidebar">
                     	<h5 class="line"><span>Ads Spot.</span></h5>
                         <ul class="ads125">
+                        	<li><a href="#"><img src="/shop/resources/img/banner/icon1.jpg" alt="MyPassion" width="125" height="125"/></a></li>
                         	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
                         	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
-                        	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
-                        	<li><a href="#"><img src="/shop/resources/img/banner/3.png" alt="MyPassion" width="125" height="125"/></a></li>
+                        	<li><a href="#"><img src="/shop/resources/img/banner/banner_design.png" alt="MyPassion" width="125" height="125"/></a></li>
                         </ul>
                     </div>
                     

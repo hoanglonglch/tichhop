@@ -51,13 +51,15 @@ public class HomeController {
 	}
 	@ModelAttribute("latetyNew")
 	public List<New> getLatetyNew(){
-		Page<New> pageLatetyNew=repositoryNew.findTop4ByOrderByIdDesc(new PageRequest(0, 4));
+//		Page<New> pageLatetyNew=repositoryNew.findTop4ByOrderByIdDesc(new PageRequest(0, 4));
+		Page<New> pageLatetyNew=repositoryNew.findByFlag(1,new PageRequest(0, 4,Direction.DESC,"id"));
 		List<New> latetyNew=pageLatetyNew.getContent();
 		return latetyNew;
 	}
 	@ModelAttribute("hotNew")
 	public List<New> getHotNew(){
-		Page<New> hotNewPage=repositoryNew.findAll(new PageRequest(0, 4,Direction.DESC,"count"));
+//		Page<New> hotNewPage=repositoryNew.findAll(new PageRequest(0, 4,Direction.DESC,"count"));
+		Page<New> hotNewPage=repositoryNew.findByFlag(1,new PageRequest(0, 4,Direction.DESC,"count"));
 		List<New> hotNews=hotNewPage.getContent();
 		return hotNews;
 	}

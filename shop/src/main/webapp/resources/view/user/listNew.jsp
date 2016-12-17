@@ -1,5 +1,7 @@
 <%@ page import="java.util.*" %>	
-<%@ page import="com.guru.model.New" %>	
+<%@ page import="com.guru.model.New" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<c:forEach items="${parentCates}" var="parentCate">
 <div class="container">
@@ -27,7 +29,7 @@
 								<td>${category.name}</td>
 								<td>${new1.id}</td>
 								<td>${new1.title}</td>
-								<td>${new1.splitContent2}</td>
+								<td><a href="${contextPath}/admin/new/${new1.id}">view detail</a></td>
 							</tr>
 					</c:forEach>
 				</c:forEach>

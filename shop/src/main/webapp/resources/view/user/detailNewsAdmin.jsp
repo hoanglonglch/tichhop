@@ -9,5 +9,4 @@
 	<span class="meta">26 May, 2013. \\ <a href="#">${newObj.category.name}</a>
 		\\
 	</span>
-	
 </div>
